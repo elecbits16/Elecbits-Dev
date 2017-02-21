@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>md-steppers</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.css">
+    <!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">-->
+    <!-- material-steppers style sheet -->
+    <link rel="stylesheet" href="material-steppers.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body ng-cloak ng-app="SteppersApp" ng-controller="SteppersDemoCtrl as vm" layout="column">
+
+   <!-- <div class="toggle-options">
+        <md-button class="md-primary md-raised" ng-click="vm.toggleMobileStepText();">Toggle MobileStepText</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.toggleVertical();">Toggle Vertical</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.toggleLinear();">Toggle Linear</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.toggleAlternative();">Toggle Alternative</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.showError();">Show error</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.clearError();">Clear error</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.showFeedback();">Show Feedback</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.clearFeedback();">Clear Feedback</md-button>
+    </div>-->
+
+    <md-stepper id="stepper-demo" md-mobile-step-text="vm.isMobileStepText" md-vertical="vm.isVertical" md-linear="vm.isLinear"
+        md-alternative="vm.isAlternative">
+        <md-step md-label="Select a campaign">
+            <md-step-body>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="vm.selectCampaign();">Continue</md-button>
+                <md-button class="md-primary" ng-click="vm.cancel();">Cancel</md-button>
+            </md-step-actions>
+        </md-step>
+
+        <md-step md-label="Create an group">
+            <md-step-body>
+                <md-input-container>
+                    <label>Username</label>
+                    <input type="text" ng-model="user.name">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Email</label>
+                    <input type="email" ng-model="user.email">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Password</label>
+                    <input type="password" ng-model="user.password">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Confirm password</label>
+                    <input type="password" ng-model="user.confirmPassword">
+                </md-input-container>
+            </md-step-body>
+
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="vm.nextStep();">Continue</md-button>
+                <md-button class="md-primary" ng-click="vm.previousStep();">Back</md-button>
+            </md-step-actions>
+        </md-step>
+
+        <md-step md-label="Create an ad">
+            <md-step-body>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+            </md-step-body>
+
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="vm.nextStep();">Continue</md-button>
+                <md-button class="md-primary" ng-click="vm.previousStep();">Back</md-button>
+            </md-step-actions>
+        </md-step>
+
+        <md-step md-label="Publish the ad" md-optional="Optional">
+            <md-step-body>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nobis saepe facere suscipit atque,
+                    sapiente, natus mollitia ipsum odit accusamus repellendus deserunt. Odio sit similique, labore maxime
+                    voluptatibus, eaque autem!</p>
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="vm.nextStep();">Complete</md-button>
+                <md-button class="md-primary" ng-click="vm.previousStep();">Back</md-button>
+            </md-step-actions>
+        </md-step>
+
+
+    </md-stepper>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>-->
+
+    <!-- material-steppers Library -->
+    <script src="material-steppers.min.js"></script>
+
+    <!-- Application bootstrap  -->
+    <script type="text/javascript" src="demo.js"></script>
+</body>
+
+</html>

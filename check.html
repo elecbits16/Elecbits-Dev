@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<body>
+
+	<div ng-app="myApp" ng-controller="myCtrl"> 
+	<div layout="column" style="margin-left: 27%;
+    margin-top: 7%;
+}">
+	<md-checkbox ng-model="item1" ng-change="sum1()">Item 1</md-checkbox>
+	<md-checkbox ng-model="item2" ng-change="sum2()">Item 2</md-checkbox>
+	<md-checkbox ng-model="item3" ng-change="sum3()">Item 3</md-checkbox>
+	
+	<p>Total=&#8377;{{total}}</p>
+	<p>Cart Items={{cart}}</p>
+	<p ng-if="!total">Kuch daal bc cart mein!</p>
+	<p ng-if="total==6 ">Bada ameer hai BC!</p>
+    </div>
+	</div>
+
+
+	<script>
+		var app = angular.module('myApp', ['ngMaterial','ngMessages']);
+		app.controller('myCtrl', function($scope, $timeout) {
+        $scope.item1="";
+        $scope.item2="";
+        $scope.item3="";
+        $scope.total=0;
+        $scope.cart=0;
+
+        $scope.sum1=function(){
+        	if($scope.item1==true){
+        		$scope.total=$scope.total+1;
+        		$scope.cart=$scope.cart+1;
+        	}
+        	else{
+        		$scope.total=$scope.total-1;
+        		$scope.cart=$scope.cart-1;
+        	}
+        }
+
+        $scope.sum2=function(){
+        	if($scope.item2==true){
+        		$scope.total=$scope.total+2;
+        		$scope.cart=$scope.cart+1;
+        	}
+        	else{
+        		$scope.total=$scope.total-2;
+        		$scope.cart=$scope.cart-1;
+        	}
+        }
+
+        $scope.sum3=function(){
+        	if($scope.item3==true){
+        		$scope.total=$scope.total+3;
+        		$scope.cart=$scope.cart+1;
+        	}
+        	else{
+        		$scope.total=$scope.total-3;
+        		$scope.cart=$scope.cart-1;
+        	}
+        }
+        
+		});
+	</script>
+
+</body>
+</html>
