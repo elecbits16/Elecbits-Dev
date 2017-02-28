@@ -70,7 +70,7 @@ while ($row_pro=mysqli_fetch_array($run_pro)) {
   
 
   $quiz_id= $row_pro['quiz_id'];
-  $question= $row_pro['question'];
+  $question= $row_pro['question1'];
  
  
 

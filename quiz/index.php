@@ -1,146 +1,39 @@
 <!DOCTYPE html>
+
+<?php
+
+session_start();
+include("../functions/functions.php");
+
+?>
+
+
+
 <html>
 <head>
-	<title></title>
+  <title>Quiz test</title>
 
-<link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Mada" rel="stylesheet">
-
-<style type="text/css">
-
-
-.error {color: #FF0000;}
-
-	
-.button1 {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 20px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.button1 span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button1 span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button1:hover span {
-  padding-right: 25px;
-}
-
-.button1:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-
-
-</style>
-</head>
-
-
-<body>
-
-     <?php
-
-      if (isset($_GET['lesson_id'])) {
-     
-     $less_id = $_GET['lesson_id'];
-
-
-     $get_pro = "SELECT * FROM lesson WHERE lesson_id='$less_id'";
-
-$run_pro = mysqli_query($con, $get_pro);
-
- $row_pro = mysqli_fetch_array($run_pro);
-  
-  $lesson_title = $row_pro['lesson_title'];
-   $lesson_youtube = $row_pro['lesson_youtube'];
-   $lesson_compo = $row_pro['lesson_compo'];
-   $lesson_aim= $row_pro['lesson_aim'];  
-   $lesson_inst = $row_pro['lesson_inst'];
-   $lesson_quiz_id = $row_pro['lesson_quiz_id'];
-   $points= $row_pro['points'];
+  <?php
    
 
+   include("../public/link.php");
 
-}
+  ?>
 
-      
-?>    
+<style>
+.error {color: #FF0000;}
+</style>
 
-
-
-<div class="panel panel-default">
-  <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; "><?php echo $lesson_title ;?> </div>
- <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="<?php echo $lesson_youtube; ?>" frameborder="10" allowfullscreen></iframe>
-</div>
-</div>
+</head>
+<body>
 
 
-<div class="panel panel-default">
-   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; ">AIM</div>
-  <div class="panel-body"><?php echo $lesson_aim ;?> </div>
-</div>
-
-<div class="panel panel-default">
-   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; ">COMPONENTS</div>
-  <div class="panel-body"><?php echo $lesson_compo ;?> </div>
-</div>
-
-
-<div class="panel panel-default">
-   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; ">INSTRUCTIONS</div>
-  <div class="panel-body"><?php echo $lesson_inst ;?></div>
-</div>
-
-<div class="col-lg-3" style="text-align: center;">
-  
-
-
-
-</div>
-
-
-<div class="panel-group">
-    <div class="panel panel-default" >
-      <div class="panel-heading" style="background-color: transparent; text-align: center;">
-        <h4 class="panel-title" style="background-color: transparent; text-align: center;">
-                 <button type="button" class="btn btn-success btn-lg" data-toggle="collapse" href="#collapse1">Start Quiz</button>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">
-
-
-
-
-
+<div class="container" style="padding-top: 100px;">
 
 
 <?php
 
-$get_quiz = "SELECT * FROM quiz where quiz_lesson_id ='$less_id'";
+$get_quiz = "SELECT * FROM quiz where quiz_id ='QZ24'";
 
 $run_quiz = mysqli_query($con , $get_quiz);
 
@@ -199,7 +92,7 @@ $opt_11err =  $opt_22err = $opt_33err = $opt_44err = " ";
 
 
 
-if (isset($_POST['quiz'])) {
+if (isset($_POST['update'])) {
 
 $opt_11 = $_POST['opt_11'] ; 
 $opt_22 = $_POST['opt_22'] ; 
@@ -306,12 +199,10 @@ if (($opt_44 != $correct_opt4)) {
     </div>
 
 
-
 </div>
 
-
-
 <div class="col-lg-6">
+
 <p><?php echo $question3 ?>  <span class="error">* <?php echo $opt_33err ?></span> </p>
   
     <div class="radio">
@@ -346,9 +237,6 @@ if (($opt_44 != $correct_opt4)) {
     </div>
 
 
-
-
-
 </div>
 
 
@@ -357,8 +245,11 @@ if (($opt_44 != $correct_opt4)) {
 
 
 
+
+
+
 <div >
-      <button type="submit" name="quiz" style="padding : 10px 10px 10px 10px; "">Submit</button>
+      <button type="submit" name="update" style="padding : 10px 10px 10px 10px; "">Submit</button>
     </div>
 
 </form>
@@ -370,102 +261,7 @@ if (($opt_44 != $correct_opt4)) {
 
 
 
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-        <div class="panel-footer">Panel Footer</div>
-      </div>
-    </div>
-  </div>
-
-
-
-<div class="col-lg-6" style="text-align: center;">
-  
- 
-
-
 </div>
-
-<div class="col-lg-3" style="text-align: center;">
-  
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-  </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -479,3 +275,10 @@ if (($opt_44 != $correct_opt4)) {
 
 </body>
 </html>
+
+
+
+
+
+
+
