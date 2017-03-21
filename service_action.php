@@ -32,6 +32,13 @@ include("includes/db.php");
     margin-top: 30px;
     margin-bottom: 37%;
   }
+  .form-dropdown{
+    width: 50%;
+    height: 28px;
+    margin-top: 22px;
+    border: 1px solid rgba(245, 222, 179, 0);
+    border-bottom: 1px solid rgba(148, 140, 140, 0.26);
+  }
   
 </style>
 <html>
@@ -95,7 +102,7 @@ include("public/menubar.php");
       <div class="service-form" ng-if="weapon=='Readymade Project'">Readymade project form!
         <div layout="row">
           <md-input-container flex="50">
-            <label>Client Name</label>
+            <label>Name</label>
             <input required name="clientName" ng-model="project.clientName">
             <div ng-messages="projectForm.clientName.$error">
               <div ng-message="required">This is required.</div>
@@ -103,43 +110,48 @@ include("public/menubar.php");
           </md-input-container>
 
           <md-input-container flex="50">
-            <label>Project Type</label>
-            <md-select name="type" ng-model="project.type" required>
-              <md-option value="app">Application</md-option>
-              <md-option value="web">Website</md-option>
-            </md-select>
+            <label>Mobile Number</label>
+            <input required name="clientName" type="number" ng-model="project.clientNam">
+            <div ng-messages="projectForm.clientName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
           </md-input-container>
+
+        
+            
+            
+        
         </div>
         <div layout="row">
           <md-input-container flex="50">
-            <label>Client Name</label>
+            <label>E-mail</label>
             <input required name="clientName" ng-model="project.clientName">
             <div ng-messages="projectForm.clientName.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
 
-          <md-input-container flex="50">
-            <label>Project Type</label>
-            <md-select name="type" ng-model="project.type" required>
-              <md-option value="app">Application</md-option>
-              <md-option value="web">Website</md-option>
-            </md-select>
-          </md-input-container>
+          <select name="type"  class="form-dropdown" required>
+              <option value="hi" selected disabled>Location</option>
+              <option value="app">New Delhi</option>
+              <option value="web">Noida</option>
+              <option value="app">Gurgaon</option>
+              <option value="web">Outside NCR</option>
+            </select>
+        </div>
+        <div layout="row">
+          <select name="type"  class="form-dropdown" required>
+              <option value="hi" selected disabled>Select range</option>
+              <option value="app">0-3999</option>
+              <option value="web">4000-6999</option>
+              <option value="app">7000-9999</option>
+              <option value="web">10,000-above</option>
+            </select>
+
+            <input type="date" class="form-dropdown" name="bday" min="2000-01-02">
         </div>
 
-        <md-input-container class="md-block">
-          <label>Client Email</label>
-          <input required type="email" name="clientEmail" ng-model="project.clientEmail"
-          minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-
-          <div ng-messages="projectForm.clientEmail.$error" role="alert">
-            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-              Your email must be between 10 and 100 characters long and look like an e-mail address.
-            </div>
-          </div>
-        </md-input-container>
-
+        
 
 <input type="submit" name="update" value="submit">
 
