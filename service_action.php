@@ -2,17 +2,17 @@
 <head>
 
  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+ <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 </head>
 <?php
 
@@ -30,12 +30,18 @@ include("includes/db.php");
     border-radius: 11px;
     padding: 18px;
     margin-top: 30px;
-    margin-bottom: 37%;
+    margin-bottom: 25%;
   }
   .form-dropdown{
     width: 50%;
     height: 28px;
     margin-top: 22px;
+    border: 1px solid rgba(245, 222, 179, 0);
+    border-bottom: 1px solid rgba(148, 140, 140, 0.26);
+  }
+  .form-date{
+    padding-top: 6px;
+    width: 100%;
     border: 1px solid rgba(245, 222, 179, 0);
     border-bottom: 1px solid rgba(148, 140, 140, 0.26);
   }
@@ -49,113 +55,131 @@ include("includes/db.php");
   ?>
 </head>
 <body>
-<!-- Links of sheet end -->
-<!--Top bar start-->
+  <!-- Links of sheet end -->
+  <!--Top bar start-->
 
-<?php 
+  <?php 
 
-include("public/topbar.php");
+  include("public/topbar.php");
 
-?>
+  ?>
 
-<!--Top bar end-->
+  <!--Top bar end-->
 
   
 
-<!--Logo bar start-->
-<<?php 
+  <!--Logo bar start-->
+  <<?php 
 
-include("public/logobar.php");
+  include("public/logobar.php");
 
-?>
-<!--Logo bar end-->
+  ?>
+  <!--Logo bar end-->
 
-<!--Menu bar start-->
-<?php
+  <!--Menu bar start-->
+  <?php
 
-include("public/menubar.php");
+  include("public/menubar.php");
 
-?>
-   <!-- Menu bar end--> 
+  ?>
+  <!-- Menu bar end--> 
 
-    
-     <div ng-app="myApp" ng-controller="myCtrl">
-    <div style="margin: 0 10% 8.4% 10%;">
-      <div layout="row" layout-align="space-between center">
 
-<div>
+  <div ng-app="myApp" ng-controller="myCtrl">
+
+  <div style="text-align:center;">
+      <div>
         <span>Choose a service that best suits your need </span>
-              
-</div>
-  
-        <md-select ng-model="weapon" placeholder="Select a service" class="md-no-underline">
-          <md-option value="Readymade Project">Readymade Project</md-option>
-          <md-option value="DIY Project">DIY Project</md-option>
-          <md-option value="Buy Components">Buy Components</md-option>
-          <md-option value="Rent Project">Rent a project</md-option>
-        </md-select>
       </div>
+
+      <md-select ng-model="weapon" placeholder="Select a service" class="md-no-underline" style="width: 31%; margin: 3% auto;">
+        <md-option value="Readymade Project">Readymade Project</md-option>
+        <md-option value="DIY Project">DIY Project</md-option>
+        <md-option value="Buy Components">Buy Components</md-option>
+        <md-option value="Rent Project">Rent a project</md-option>
+      </md-select>
+    </div>
+
+    <div style="margin: 0 8% 8.4% 8%;">
+
       <div ng-if="weapon">Great, you selected {{weapon}}!</div>
+      <form method="post" action="">
+        <div class="service-form" ng-if="weapon=='Readymade Project'">Readymade project form!
+          <div layout="row">
+            <md-input-container flex="50">
+              <label>Name</label>
+              <input required name="clientName" ng-model="project.clientName">
+              <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container flex="50">
+              <label>Mobile Number</label>
+              <input required name="clientName" type="number" ng-model="project.clientNam">
+              <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
 
 
-<form method="post" action="">
-      <div class="service-form" ng-if="weapon=='Readymade Project'">Readymade project form!
-        <div layout="row">
-          <md-input-container flex="50">
-            <label>Name</label>
-            <input required name="clientName" ng-model="project.clientName">
-            <div ng-messages="projectForm.clientName.$error">
-              <div ng-message="required">This is required.</div>
-            </div>
-          </md-input-container>
-
-          <md-input-container flex="50">
-            <label>Mobile Number</label>
-            <input required name="clientName" type="number" ng-model="project.clientNam">
-            <div ng-messages="projectForm.clientName.$error">
-              <div ng-message="required">This is required.</div>
-            </div>
-          </md-input-container>
-
-        
             
             
-        
-        </div>
-        <div layout="row">
-          <md-input-container flex="50">
-            <label>E-mail</label>
-            <input required name="clientName" ng-model="project.clientName">
-            <div ng-messages="projectForm.clientName.$error">
-              <div ng-message="required">This is required.</div>
-            </div>
-          </md-input-container>
 
-          <select name="type"  class="form-dropdown" required>
+          </div>
+          <div layout="row">
+            <md-input-container flex="50">
+              <label>E-mail</label>
+              <input required name="clientName" ng-model="project.clientName">
+              <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+
+            <select name="type"  class="form-dropdown" required>
               <option value="hi" selected disabled>Location</option>
               <option value="app">New Delhi</option>
               <option value="web">Noida</option>
               <option value="app">Gurgaon</option>
               <option value="web">Outside NCR</option>
             </select>
-        </div>
-        <div layout="row">
-          <select name="type"  class="form-dropdown" required>
+          </div>
+          <div layout="row" >
+            <select name="type"  class="form-dropdown" required>
               <option value="hi" selected disabled>Select range</option>
               <option value="app">0-3999</option>
               <option value="web">4000-6999</option>
               <option value="app">7000-9999</option>
               <option value="web">10,000-above</option>
             </select>
+            <div style="width:50%">
+              <p style="margin:0px">Delivery Date</p>
+              <input type="date" class="form-date" name="bday" min="2000-01-02">
+            </div>
+          </div>
 
-            <input type="date" class="form-dropdown" name="bday" min="2000-01-02">
-        </div>
+          <div layout="row" >
+            <md-input-container flex="100" style="margin-top: 5%;">
+              <label>Project Title</label>
+              <input required name="clientName" ng-model="project.clientName">
+              <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+          </div>
 
-        
+          <div layout="row">
+            <md-input-container flex="100" >
+              <label>Project Description</label>
+              <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+          </div>
 
-<input type="submit" name="update" value="submit">
 
-</form>
+
+          <md-button class="md-raised md-primary">Submit</md-button>
+
+        </form>
 
       </div>
 
@@ -253,24 +277,24 @@ include("public/menubar.php");
         </md-input-container>
       </div> 
 
-<?php
+      <?php
 
-if (isset($_POST['update'])) {
-
-
-$name = $_POST['clientName'];
-
-echo $name;
-
-}
+      if (isset($_POST['update'])) {
 
 
+      $name = $_POST['clientName'];
+
+      echo $name;
+
+    }
 
 
-?>
 
-    </div>
+
+    ?>
+
   </div>
+</div>
 </div>
 
 
