@@ -110,13 +110,14 @@ include("includes/db.php");
     </div>
 
 
-<div style="margin: 0 8% 8.4% 8%;">
+<div style="margin: 0 8% 8% 6%;">
 
   <div ng-if="weapon">Great, you selected {{weapon}}!</div>
   <form method="post" action="">
     <div class="service-form" ng-if="weapon=='Readymade Project'">Readymade project form!
-      <div layout="row">
-        <md-input-container flex="50">
+      <div class="container">
+      <div class="col-lg-6">
+        <md-input-container  class="md-block">
           <label>Name</label>
           <input required name="clientName" ng-model="project.clientName">
           <div ng-messages="projectForm.clientName.$error">
@@ -124,18 +125,8 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <md-input-container flex="50">
-          <label>Mobile Number</label>
-          <input required name="clientName" type="number" ng-model="project.clientNam">
-          <div ng-messages="projectForm.clientName.$error">
-            <div ng-message="required">This is required.</div>
-          </div>
-        </md-input-container>
 
-      </div>
-
-      <div layout="row">
-        <md-input-container flex="50">
+           <md-input-container class="md-block" >
           <label>E-mail</label>
           <input required name="clientName" ng-model="project.clientName">
           <div ng-messages="projectForm.clientName.$error">
@@ -143,28 +134,46 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" required>
-          <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
-        </select>
-      </div>
-      <div layout="row" >
-        <select name="type"  class="form-dropdown" required>
+            <select name="type"  class="form-dropdown" required class="md-block">
           <option value="hi" selected disabled>Select range</option>
           <option value="app">0-3999</option>
           <option value="web">4000-6999</option>
           <option value="app">7000-9999</option>
           <option value="web">10,000-above</option>
         </select>
-        <div style="width:50%">
+
+      </div>
+
+         
+
+
+<div class="col-lg-6">
+       <md-input-container class="md-block">
+          <label>Mobile Number</label>
+          <input required name="clientName" type="number" ng-model="project.clientNam">
+          <div ng-messages="projectForm.clientName.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <select name="type"  class="form-dropdown" required class="md-block"  style="width:75%">
+          <option value="hi" selected disabled>Location</option>
+          <option value="app">New Delhi</option>
+          <option value="web">Noida</option>
+          <option value="app">Gurgaon</option>
+          <option value="web">Outside NCR</option>
+        </select>
+      <br>
+      <br>
+      
+        <div style="width:75%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
       </div>
+     
 
+</div>
       <div layout="row" >
         <md-input-container flex="100" style="margin-top: 5%;">
           <label>Project Title</label>
@@ -190,56 +199,70 @@ include("includes/db.php");
 
   </div>
 
+
+
+
+<form method="post" action="">
   <div class="service-form" ng-if="weapon=='DIY Project'">DIY project form!
-    <div layout="row">
-      <md-input-container flex="50">
-        <label>Name</label>
-        <input required name="clientName" ng-model="project.clientName">
-        <div ng-messages="projectForm.clientName.$error">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
+        <div class="container">
+      <div class="col-lg-6">
+        <md-input-container  class="md-block">
+          <label>Name</label>
+          <input required name="clientName" ng-model="project.clientName">
+          <div ng-messages="projectForm.clientName.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
 
-      <md-input-container flex="50">
-        <label>Mobile Number</label>
-        <input required name="clientName" type="number" ng-model="project.clientNam">
-        <div ng-messages="projectForm.clientName.$error">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
-    </div>
 
-    <div layout="row">
-      <md-input-container flex="50">
-        <label>E-mail</label>
-        <input required name="clientName" ng-model="project.clientName">
-        <div ng-messages="projectForm.clientName.$error">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
+           <md-input-container class="md-block" >
+          <label>E-mail</label>
+          <input required name="clientName" ng-model="project.clientName">
+          <div ng-messages="projectForm.clientName.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
 
-      <select name="type"  class="form-dropdown" required>
-        <option value="hi" selected disabled>Location</option>
-        <option value="app">New Delhi</option>
-        <option value="web">Noida</option>
-        <option value="app">Gurgaon</option>
-        <option value="web">Outside NCR</option>
-      </select>
-    </div>
-    <div layout="row" >
-      <select name="type"  class="form-dropdown" required>
-        <option value="hi" selected disabled>Select range</option>
-        <option value="app">0-3999</option>
-        <option value="web">4000-6999</option>
-        <option value="app">7000-9999</option>
-        <option value="web">10,000-above</option>
-      </select>
-      <div style="width:50%">
-        <p style="margin:0px">Delivery Date</p>
-        <input type="date" class="form-date" name="bday" min="2000-01-02">
+            <select name="type"  class="form-dropdown" required class="md-block">
+          <option value="hi" selected disabled>Select range</option>
+          <option value="app">0-3999</option>
+          <option value="web">4000-6999</option>
+          <option value="app">7000-9999</option>
+          <option value="web">10,000-above</option>
+        </select>
+
       </div>
-    </div>
 
+         
+
+
+<div class="col-lg-6">
+       <md-input-container class="md-block">
+          <label>Mobile Number</label>
+          <input required name="clientName" type="number" ng-model="project.clientNam">
+          <div ng-messages="projectForm.clientName.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <select name="type"  class="form-dropdown" required class="md-block"  style="width:75%">
+          <option value="hi" selected disabled>Location</option>
+          <option value="app">New Delhi</option>
+          <option value="web">Noida</option>
+          <option value="app">Gurgaon</option>
+          <option value="web">Outside NCR</option>
+        </select>
+      <br>
+      <br>
+      
+        <div style="width:75%">
+          <p style="margin:0px">Delivery Date</p>
+          <input type="date" class="form-date" name="bday" min="2000-01-02">
+        </div>
+      </div>
+     
+
+</div>
     <div layout="row" >
       <md-input-container flex="100" style="margin-top: 5%;">
         <label>Project Title</label>
@@ -260,7 +283,10 @@ include("includes/db.php");
 
 
     <md-button class="md-raised md-primary">Submit</md-button>
-  </div>
+
+   
+</form>
+</div>
 
 
 
