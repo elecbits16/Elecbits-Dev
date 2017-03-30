@@ -32,7 +32,7 @@ include("includes/db.php");
     margin-bottom: 25%;
   }
   .form-dropdown{
-    width: 50%;
+    width: 100%;
     height: 28px;
     margin-top: 22px;
     border: 1px solid rgba(245, 222, 179, 0);
@@ -86,6 +86,12 @@ include("includes/db.php");
 
   <div ng-app="myApp" ng-controller="myCtrl">
 
+
+
+
+
+
+
     <div style="text-align:center;">
       <div>
         <span>Choose a service that best suits your need </span>
@@ -111,6 +117,8 @@ include("includes/db.php");
 
 <div style="margin: 0 8% 8% 6%;">
 
+
+
   <div ng-if="weapon">Great, you selected {{weapon}}!</div>
 
 
@@ -128,7 +136,7 @@ include("includes/db.php");
 
   <form method="post" action="">
     <div class="service-form" ng-if="weapon=='Readymade Project'">Readymade project form!
-      <div class="container">
+      <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container  class="md-block">
           <label>Name</label>
@@ -169,7 +177,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" required class="md-block"  style="width:75%">
+        <select name="type"  class="form-dropdown" required class="md-block"  style="width:100%">
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -179,7 +187,7 @@ include("includes/db.php");
       <br>
       <br>
       
-        <div style="width:75%">
+        <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -221,7 +229,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='DIY Project'">DIY project form!
-        <div class="container">
+        <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container  class="md-block">
           <label>Name</label>
@@ -262,7 +270,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" required class="md-block"  style="width:75%">
+        <select name="type"  class="form-dropdown" required class="md-block"  style="width:100%">
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -272,7 +280,7 @@ include("includes/db.php");
       <br>
       <br>
       
-        <div style="width:75%">
+        <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -313,7 +321,7 @@ include("includes/db.php");
 <form method="post" action="">
 
   <div class="service-form" ng-if="weapon=='Buy Components'">Buy Components form!
-    <div class="container">
+    <div class="container" style="width:100%">
     <div class="col-lg-6">
       <md-input-container  class="md-block">
         <label>Name</label>
@@ -341,7 +349,7 @@ include("includes/db.php");
         </div>
       </md-input-container>
 
-      <select name="type"  class="form-dropdown" style="width: 75% ;" required>
+      <select name="type"  class="form-dropdown" style="width: 100% ;" required>
         <option value="hi" selected disabled>Location</option>
         <option value="app">New Delhi</option>
         <option value="web">Noida</option>
@@ -367,7 +375,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Rent Project'">Rent a project form!
- <div class="container">
+ <div class="container" style="width:100%">
       <div class="col-lg-6">    
       <md-input-container class="md-block">
         <label>Name</label>
@@ -396,7 +404,7 @@ include("includes/db.php");
         </div>
       </md-input-container>
 
-  <select name="type"  class="form-dropdown" style="width: 75%;" required>
+  <select name="type"  class="form-dropdown" style="width: 100%;" required>
         <option value="hi" selected disabled>Choose a pickup location</option>
         <option value="app">South Delhi</option>
         <option value="web">West Delhi</option>
@@ -417,7 +425,7 @@ include("includes/db.php");
 
 
      
-      <select name="type"  class="form-dropdown" style="width: 75%;" required>
+      <select name="type"  class="form-dropdown" style="width: 100%;" required>
         <option value="hi" selected disabled>Location</option>
         <option value="app">New Delhi</option>
         <option value="web">Noida</option>
@@ -432,7 +440,7 @@ include("includes/db.php");
    
     
 
-      <select name="type"  class="form-dropdown" style="width: 75%;" required>
+      <select name="type"  class="form-dropdown" style="width: 100%;" required>
         <option value="hi" selected disabled>Choose a rental plan</option>
         <option value="app">1 day - Get a project for a day at ₹ 600 - ₹ 1000 (Depending on the project.)</option>
         <option value="web">1 week - Get a project for a week at ₹ 1000 - ₹ 2000 (Depending on the project.) </option>
@@ -446,7 +454,7 @@ include("includes/db.php");
     </div>
     <br>
 
-      <div style="width:75%">
+      <div style="width:100%">
         <p style="margin:0px">Delivery Date</p>
         <input type="date" class="form-date" name="bday" min="2000-01-02">
       </div>
@@ -466,7 +474,7 @@ include("includes/db.php");
 
 <form method="" action="">
   <div class="service-form" ng-if="weapon=='Manufacture a project'">Manufacture a project form
-       <div class="container">
+       <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -486,7 +494,7 @@ include("includes/db.php");
         </md-input-container>
 
 
-   <select name="type"  class="form-dropdown" style="width: 75%" required>
+   <select name="type"  class="form-dropdown" style="width: 100%" required>
           <option value="hi" selected disabled>Select range</option>
           <option value="app">0-3999</option>
           <option value="web">4000-6999</option>
@@ -508,7 +516,7 @@ include("includes/db.php");
         </md-input-container>
        
 
-        <select name="type"  class="form-dropdown" style="width: 75%;" required>
+        <select name="type"  class="form-dropdown" style="width: 100%;" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -524,7 +532,7 @@ include("includes/db.php");
 
 <br>
 
-        <div style="width:75%">
+        <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -565,7 +573,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Circuit Designing'">Circuit Designing form
-        <div class="container">
+        <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -583,7 +591,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-            <select name="type"  class="form-dropdown" style="width:75%" required>
+            <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Select range</option>
           <option value="app">0-3999</option>
           <option value="web">4000-6999</option>
@@ -604,7 +612,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" style="width:75%" required>
+        <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -619,7 +627,7 @@ include("includes/db.php");
 </div>
 <br>
 
-            <div style="width:75%">
+            <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -660,7 +668,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Documentation of projects'">Documentation of projects 
-       <div class="container">
+       <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -687,7 +695,7 @@ include("includes/db.php");
 </div>
 <br>
 
-            <div style="width:75%">
+            <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -704,7 +712,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" style="width:75%" required>
+        <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -744,7 +752,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Starter Kit'">Starter Kit form
-        <div class="container">
+        <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -772,7 +780,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" style="width:75%" required>
+        <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -811,7 +819,7 @@ include("includes/db.php");
 
 
   <div class="service-form" ng-if="weapon=='Software Projects'">Software Project form
-      <div class="container">
+      <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -831,7 +839,7 @@ include("includes/db.php");
         </md-input-container>
 
 
-<select name="type"  class="form-dropdown" style="width:75%" required>
+<select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Select range</option>
           <option value="app">0-3999</option>
           <option value="web">4000-6999</option>
@@ -854,7 +862,7 @@ include("includes/db.php");
         </md-input-container>
        
 
-        <select name="type"  class="form-dropdown" style="width:75%" required>
+        <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -866,7 +874,7 @@ include("includes/db.php");
 <br>
 <br>
 
-  <div style="width:75%">
+  <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -907,7 +915,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Web Projects'">Web Project form
-      <div class="container">
+      <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -947,7 +955,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="type"  class="form-dropdown" style="width:75%" required>
+        <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -958,7 +966,7 @@ include("includes/db.php");
 <br>
 <br>
 
-  <div style="width:75%">
+  <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -997,7 +1005,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Industrial Prototypes'">Industrial Prototype form
-       <div class="container">
+       <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -1017,7 +1025,7 @@ include("includes/db.php");
         </md-input-container>
 
 
-   <select name="type"  class="form-dropdown" style="width:75%"  required>
+   <select name="type"  class="form-dropdown" style="width:100%"  required>
           <option value="hi" selected disabled>Select range</option>
           <option value="app">0-3999</option>
           <option value="web">4000-6999</option>
@@ -1040,7 +1048,7 @@ include("includes/db.php");
         </md-input-container>
        
 
-        <select name="type"  class="form-dropdown" style="width:75%" required>
+        <select name="type"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
           <option value="app">New Delhi</option>
           <option value="web">Noida</option>
@@ -1052,7 +1060,7 @@ include("includes/db.php");
 <br>
 <br>
 
- <div style="width:75%">
+ <div style="width:100%">
           <p style="margin:0px">Delivery Date</p>
           <input type="date" class="form-date" name="bday" min="2000-01-02">
         </div>
@@ -1100,7 +1108,7 @@ include("includes/db.php");
 
 
   <div class="service-form" ng-if="weapon=='Custom Order/Other services'">Custom Order/Other services form
-       <div class="container">
+       <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -1202,7 +1210,7 @@ include("includes/db.php");
 
 <form method="post" action="">
   <div class="service-form" ng-if="weapon=='Android Development'">Android Project form
-     <div class="container">
+     <div class="container" style="width:100%">
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
@@ -1282,6 +1290,57 @@ include("includes/db.php");
      
   </div>
  </form>
+
+
+ <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                <br>
+                    <img src="images/np1.png" alt="">
+                    <div class="caption">
+                        <h3>SAVE TIME</h3>
+                        <p style="text-align: justify;">No need to travel all around the city for electronics components and projects, Just click and order.</p>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <br>
+                    <img src="images/np2.png" alt="">
+                    <div class="caption">
+                        <h3 >FREE SHIPPING</h3>
+                        <p style="text-align: justify;">We provide free home delivery. Just select your project or order a customized version on the comfort of a click.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col1-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <br>
+                    <img src="images/np3.png" alt="">
+                    <div class="caption">
+                        <h3>CASH ON DELIVERY</h3>
+                        <p style="text-align: justify;">Easy payments at your door. We believe in our customers and provide payment option after their complete satisfaction. </p>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <br>
+                    <img src="images/np4.png" alt="">
+                    <div class="caption">
+                        <h3>EASY RETURNS</h3>
+                        <p style="text-align: justify;"> We provide the best quality available in the market, If still you're not satified we will return as soon as possible.</p>
+                       
+                    </div>
+                </div>
+            </div>
 
 
 
