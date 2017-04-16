@@ -158,10 +158,10 @@ include("includes/db.php");
 
             <select name="range1"  class="form-dropdown" required class="md-block">
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
       </div>
@@ -180,10 +180,10 @@ include("includes/db.php");
 
         <select name="loc1"  class="form-dropdown" required class="md-block"  style="width:100%">
           <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option >New Delhi</option>
+          <option >Noida</option>
+          <option >Gurgaon</option>
+          <option >Outside NCR</option>
         </select>
       <br>
       <br>
@@ -252,10 +252,10 @@ include("includes/db.php");
 
             <select name="range1"  class="form-dropdown" required class="md-block">
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
       </div>
@@ -274,16 +274,16 @@ include("includes/db.php");
 
         <select name="loc1"  class="form-dropdown" required class="md-block"  style="width:100%">
           <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option >New Delhi</option>
+          <option >Noida</option>
+          <option >Gurgaon</option>
+          <option >Outside NCR</option>
         </select>
       <br>
       <br>
       
         <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
       </div>
@@ -354,10 +354,10 @@ include("includes/db.php");
 
       <select name="loc1"  class="form-dropdown" style="width: 100% ;" required>
         <option value="hi" selected disabled>Location</option>
-        <option value="app">New Delhi</option>
-        <option value="web">Noida</option>
-        <option value="app">Gurgaon</option>
-        <option value="web">Outside NCR</option>
+        <option >New Delhi</option>
+        <option >Noida</option>
+        <option >Gurgaon</option>
+        <option >Outside NCR</option>
       </select>
     </div>
     </div>
@@ -369,7 +369,7 @@ include("includes/db.php");
     </div>
 
 
-     <md-button class="md-raised md-primary">Submit</md-button>
+     <md-button class="md-raised md-primary" name="update1" type="submit" >Submit</md-button>
     </div>
 </form>
 
@@ -411,8 +411,8 @@ include("includes/db.php");
 
   <select name="pcloc1"  class="form-dropdown" style="width: 100%;" required>
         <option value="hi" selected disabled>Choose a pickup location</option>
-        <option value="app">South Delhi</option>
-        <option value="web">West Delhi</option>
+        <option >South Delhi</option>
+        <option >West Delhi</option>
       </select>
 
 
@@ -432,12 +432,12 @@ include("includes/db.php");
      
       <select name="loc1"  class="form-dropdown" style="width: 100%;" required>
         <option value="hi" selected disabled>Location</option>
-        <option value="app">New Delhi</option>
-        <option value="web">Noida</option>
+        <option >New Delhi</option>
+        <option >Noida</option>
 
 
-        <option value="app">Gurgaon</option>
-        <option value="web">Outside NCR</option>
+        <option >Gurgaon</option>
+        <option >Outside NCR</option>
       </select>
    
 
@@ -447,9 +447,9 @@ include("includes/db.php");
 
       <select name="rent1"  class="form-dropdown" style="width: 100%;" required>
         <option value="hi" selected disabled>Choose a rental plan</option>
-        <option value="app">1 day - Get a project for a day at ₹ 600 - ₹ 1000 (Depending on the project.)</option>
-        <option value="web">1 week - Get a project for a week at ₹ 1000 - ₹ 2000 (Depending on the project.) </option>
-        <option value="app">1 month - Get a project for a month (Security money and deductions later on.)</option>
+        <option >1 day - Get a project for a day at ₹ 600 - ₹ 1000 (Depending on the project.)</option>
+        <option >1 week - Get a project for a week at ₹ 1000 - ₹ 2000 (Depending on the project.) </option>
+        <option >1 month - Get a project for a month (Security money and deductions later on.)</option>
       </select>
        
     <div class="hidden-xs">
@@ -477,7 +477,7 @@ include("includes/db.php");
 <!-- Manufacture a project form -->
 
 
-<form method="" action="">
+<form method="post" action="">
   <div class="service-form" ng-if="weapon=='Manufacture a project'">Manufacture a project form
        <div class="container" style="width:100%">
      <input type="hidden" name="sys1" value="Manufacture a project form">
@@ -502,11 +502,11 @@ include("includes/db.php");
 
 
    <select name="range1"  class="form-dropdown" style="width: 100%" required>
-          <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option value="hi" selected disabled>Select the required service</option>
+          <option >Just the code</option>
+          <option >Code and integration with hardware</option>
+          <option >Components, Code and integration with hardware</option>
+          <option >Design manual, reports and intergration services.</option>
         </select>
 
        
@@ -525,10 +525,10 @@ include("includes/db.php");
 
         <select name="loc1"  class="form-dropdown" style="width: 100%;" required>
           <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option >New Delhi</option>
+          <option >Noida</option>
+          <option >Gurgaon</option>
+          <option >Outside NCR</option>
         </select>
 
 <div class="hidden-xs"> 
@@ -600,11 +600,11 @@ include("includes/db.php");
         </md-input-container>
 
             <select name="range1"  class="form-dropdown" style="width:100%" required>
-          <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option value="hi" selected disabled>Select services</option>
+          <option >PCB designing</option>
+          <option >PCB designing and implementation on board</option>
+          <option >Schematic, block diagram and PCB designing</option>
+          <option >Other services</option>
         </select>
 
       
@@ -622,10 +622,10 @@ include("includes/db.php");
 
         <select name="loc1"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option >New Delhi</option>
+          <option >Noida</option>
+          <option >Gurgaon</option>
+          <option >Outside NCR</option>
         </select>
 
 <div class="hidden-xs">
@@ -722,11 +722,11 @@ include("includes/db.php");
         </md-input-container>
 
         <select name="loc1"  class="form-dropdown" style="width:100%" required>
-          <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option value="hi" selected disabled>Select Services</option>
+          <option >Synopsis</option>
+          <option >Synopsis and Reports</option>
+          <option >Presentation, synopsis and reports</option>
+          <option >Other Services(Reasearch Paper)</option>
         </select>
       </div>
       </div>
@@ -791,11 +791,11 @@ include("includes/db.php");
         </md-input-container>
 
         <select name="loc1"  class="form-dropdown" style="width:100%" required>
-          <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option value="hi" selected disabled>Select Services </option>
+          <option >Elecduino Un</option>
+          <option >Elecduino Duex</option>
+          <option >Elecduino Trios</option>
+          <option >Other Services</option>
         </select>
       </div>
 
@@ -827,7 +827,7 @@ include("includes/db.php");
 
 
 
-
+<form method="post" action="">
   <div class="service-form" ng-if="weapon=='Software Projects'">Software Project form
       <div class="container" style="width:100%">
         <input type="hidden" name="sys1" value="Software project">
@@ -852,10 +852,10 @@ include("includes/db.php");
 
 <select name="range1"  class="form-dropdown" style="width:100%" required>
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
 
@@ -874,11 +874,11 @@ include("includes/db.php");
        
 
         <select name="loc1"  class="form-dropdown" style="width:100%" required>
-          <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option value="hi" selected disabled>Select Services</option>
+          <option >Xilinx</option>
+          <option >MATLAB</option>
+          <option >Big Data</option>
+          <option >Other Services</option>
         </select>
 
 <br>
@@ -947,10 +947,10 @@ include("includes/db.php");
 
           <select name="range1"  class="form-dropdown" required>
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
        
@@ -967,11 +967,11 @@ include("includes/db.php");
         </md-input-container>
 
         <select name="loc1"  class="form-dropdown" style="width:100%" required>
-          <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option value="hi" selected disabled>Select Services</option>
+          <option >Frontend Websites</option>
+          <option >Admin controlled website</option>
+          <option >Wordpress</option>
+          <option >Other Services(API)</option>
         </select>
 <br>
 <br>
@@ -1038,10 +1038,10 @@ include("includes/db.php");
 
    <select name="range1"  class="form-dropdown" style="width:100%"  required>
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
 
@@ -1060,11 +1060,11 @@ include("includes/db.php");
        
 
         <select name="loc1"  class="form-dropdown" style="width:100%" required>
-          <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option value="hi" selected disabled>Services</option>
+          <option >Robotics Prototype</option>
+          <option >Raspberry Pi Prototype</option>
+          <option >IOT Prototypes</option>
+          <option >Other services</option>
         </select>
 
 <br>
@@ -1117,7 +1117,7 @@ include("includes/db.php");
 
 
 
-
+<form method="post" action="">
   <div class="service-form" ng-if="weapon=='Custom Order/Other services'">Custom Order/Other services form
        <div class="container" style="width:100%">
          <input type="hidden" name="sys1" value="Custom Order">
@@ -1141,10 +1141,10 @@ include("includes/db.php");
 
            <select name="range1"  class="form-dropdown" required>
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
        
@@ -1163,10 +1163,10 @@ include("includes/db.php");
 
         <select name="loc1"  class="form-dropdown" required>
           <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option >New Delhi</option>
+          <option >Noida</option>
+          <option >Gurgaon</option>
+          <option >Outside NCR</option>
         </select>
 
 
@@ -1244,10 +1244,10 @@ include("includes/db.php");
 
             <select name="range1"  class="form-dropdown" required>
           <option value="hi" selected disabled>Select range</option>
-          <option value="app">0-3999</option>
-          <option value="web">4000-6999</option>
-          <option value="app">7000-9999</option>
-          <option value="web">10,000-above</option>
+          <option >0-3999</option>
+          <option >4000-6999</option>
+          <option >7000-9999</option>
+          <option >10,000-above</option>
         </select>
 
        
@@ -1265,10 +1265,10 @@ include("includes/db.php");
 
         <select name="loc1"  class="form-dropdown" required>
           <option value="hi" selected disabled>Location</option>
-          <option value="app">New Delhi</option>
-          <option value="web">Noida</option>
-          <option value="app">Gurgaon</option>
-          <option value="web">Outside NCR</option>
+          <option >New Delhi</option>
+          <option >Noida</option>
+          <option >Gurgaon</option>
+          <option >Outside NCR</option>
         </select>
 
 
@@ -1409,8 +1409,37 @@ include("includes/db.php");
   
 
 
-echo $name, $sys, $mailid, $range, $contact1,  $loc1,  $ddate1, $title1 ,  $desc  ;
+
+
+
+
+
+   $msg = "$name, $sys, $mailid, $range, $contact1,  $loc1,  $ddate1, $title1 ,  $desc ";
+
+   $message = "Thanks for contacting Elecbits, we will respond to you soon.  Meanwhile visit us at http://elecbits.in";
+
+    $from= "from: Info_Elecbits@elecbits.in";
+
+if(filter_var($mailid, FILTER_VALIDATE_EMAIL)){
+
+if( mail("saurav.rav67@gmail.com", "Project", $msg, $from) && mail("elecbits16@gmail.com", "Project", $msg, $from) &&mail($mailid, "We appreciate your concern", $message , $from) ) 
+      {  
+           echo "<script>alert('Your response has been added. Your response is important to us.')</script>";  
+           echo "<script>window.open('service_action.php','_self')</script>";
+      }  
+
 }
+
+
+
+
+
+
+
+
+
+}
+
 
 
 
@@ -1432,7 +1461,39 @@ echo $name, $sys, $mailid, $range, $contact1,  $loc1,  $ddate1, $title1 ,  $desc
   $pcloc1 = $_POST['pcloc1'];
 
 
-echo $name, $sys, $mailid, $range, $contact1,  $loc1,  $ddate1, $title1 ,  $desc  ;
+
+   $msg = "$name, $sys, $mailid, $range, $contact1,  $loc1,  $ddate1, $title1 , $rent1, $pcloc1,  $desc ";
+
+   $message = "Thanks for contacting Elecbits, we will respond to you soon.  Meanwhile visit us at http://elecbits.in";
+
+    $from= "from: Info_Elecbits@elecbits.in";
+
+if(filter_var($mailid, FILTER_VALIDATE_EMAIL)){
+
+if( mail("saurav.rav67@gmail.com", "Project", $msg, $from) && mail("elecbits16@gmail.com", "Project", $msg, $from) &&mail($mailid, "We appreciate your concern", $message , $from) ) 
+      {  
+           echo "<script>alert('Your response has been added. Your response is important to us.')</script>";  
+           echo "<script>window.open('service_action.php','_self')</script>";
+      }  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
