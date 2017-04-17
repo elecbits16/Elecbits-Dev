@@ -48,7 +48,8 @@ include("includes/db.php");
 </style>
 <html>
 <head>  <!-- Links of sheet -->
-  <title>Elecbits</title>
+<meta name="description" content="We provide more than 14 services that could make things easier for you at an amazing pace.">
+  <title>Elecbits - Service Request</title>
   <?php
   include("public/link.php");
   ?>
@@ -68,7 +69,7 @@ include("includes/db.php");
   
 
   <!--Logo bar start-->
-  <<?php 
+  <?php 
 
   include("public/logobar.php");
 
@@ -170,7 +171,7 @@ include("includes/db.php");
 
 
 <div class="col-lg-6">
-       <md-input-container class="md-block">
+       <md-input-container class="md-block" style="width:100%; padding-top: -100px;">
           <label>Mobile phone</label>
           <input required name="contact1" type="phone" ng-model="project.contact1">
           <div ng-messages="projectForm.clientName.$error">
@@ -178,7 +179,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-        <select name="loc1"  class="form-dropdown" required class="md-block"  style="width:100%">
+        <select name="loc1"  class="form-dropdown" required class="md-block"  style="width:100%; ">
           <option value="hi" selected disabled>Location</option>
           <option >New Delhi</option>
           <option >Noida</option>
@@ -460,7 +461,7 @@ include("includes/db.php");
     <br>
 
       <div style="width:100%">
-        <p style="margin:0px">Delivery Date</p>
+        <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
         <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
       </div>
 
@@ -636,7 +637,7 @@ include("includes/db.php");
 <br>
 
             <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
       </div>
@@ -705,7 +706,7 @@ include("includes/db.php");
 <br>
 
             <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
 
@@ -766,7 +767,7 @@ include("includes/db.php");
       <div class="col-lg-6">
         <md-input-container class="md-block">
           <label>Name</label>
-          <input required name="clientName" ng-model="project.clientName">
+          <input required name="clientName1" ng-model="project.clientName1">
           <div ng-messages="projectForm.clientName.$error">
             <div ng-message="required">This is required.</div>
           </div>
@@ -804,7 +805,7 @@ include("includes/db.php");
       <div layout="row" >
         
         <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
       </div>
@@ -886,7 +887,7 @@ include("includes/db.php");
 <br>
 
   <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
 
@@ -978,7 +979,7 @@ include("includes/db.php");
 <br>
 
   <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
 
@@ -1072,7 +1073,7 @@ include("includes/db.php");
 <br>
 
  <div style="width:100%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
 
@@ -1175,7 +1176,7 @@ include("includes/db.php");
 <br>
 
         <div style="width:50%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
 
@@ -1234,7 +1235,7 @@ include("includes/db.php");
           </div>
         </md-input-container>
 
-          <md-input-container flex="50">
+          <md-input-container class="md-block" >
           <label>E-mail</label>
           <input required name="mailid1" ng-model="project.mailid1">
           <div ng-messages="projectForm.clientName.$error">
@@ -1273,7 +1274,7 @@ include("includes/db.php");
 
 
   <div style="width:50%">
-          <p style="margin:0px">Delivery Date</p>
+          <p style="margin:0px">Delivery Date</p> <span style="font-size: 15px;"> (Closest date would be <?php echo date('d-m-Y', strtotime("+3 day")); ?>)</span> 
           <input type="date" class="form-date" name="ddate1"  min='<?php echo date('Y-m-d', strtotime("+3 day")); ?>' >
         </div>
 
@@ -1543,6 +1544,27 @@ if( mail("saurav.rav67@gmail.com", "Project", $msg, $from) && mail("elecbits16@g
 
 include("public/footer.php");
 
+?>
+
+
+  
+  <div style="float:left;  top: 100px; width:40;height:60; padding:6px; position: fixed; border-radius:8px;">
+
+ 
+   <b style="color:black;">
+
+   <br>
+<a href="https://www.facebook.com/elecbits7" target="blank" class="tips" title="follow me on Facebook"><img src="images/facebook.png"> </a><br>
+<br>
+  <a href="https://twitter.com/elecbits16" target="blank" class="tips" title="follow me on Twitter"><img src="images/twitter.png"></a><br>
+
+
+  </b>  
+
+</div>
+
+<?php
+include("flt.php");
 ?>
 
 
