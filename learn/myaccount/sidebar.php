@@ -2,6 +2,11 @@
 <html>
 <head>
 	<title></title>
+  <style>
+  .main-sidebar{
+    background-color: rgb(29, 21, 57);
+  }
+  </style>
 </head>
 <body>
   <aside class="main-sidebar">
@@ -13,7 +18,7 @@
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p> Hi <?php echo $customer_name; ?></p>
+          <p style="color:white"> Hi <?php echo $customer_name; ?></p>
 
          
         </div>
@@ -31,7 +36,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">Learning Panel</li>
+        <li class="header" style="color:white">Learning Panel</li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Lessons</span>

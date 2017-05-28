@@ -51,6 +51,28 @@
   opacity: 1;
   right: 0;
 }
+.panel-body{
+  color: black;
+  background: rgba(65, 34, 187, 0.12)
+}
+.panel-default{
+  border: none;
+}
+.quiz-btn{
+          background-color: #10d18b;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 9px;
+    color: white;
+    border-radius: 3px;
+    border-width: 0px;
+    height: 46px;
+    width: 161px;
+    text-decoration: none;
+}
+.quiz-btn:hover{
+      box-shadow: 0 -3px rgba(0, 0, 0, 0.38) inset;
+}
 
 
 
@@ -91,7 +113,7 @@ $run_pro = mysqli_query($con, $get_pro);
 
 
 <div class="panel panel-default">
-  <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; "><?php echo $lesson_title ;?> </div>
+  <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif;color: white;background-color: rgba(27, 26, 138, 0.85); "><?php echo $lesson_title ;?> </div>
  <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item" src="<?php echo $lesson_youtube; ?>" frameborder="10" allowfullscreen></iframe>
 </div>
@@ -99,18 +121,18 @@ $run_pro = mysqli_query($con, $get_pro);
 
 
 <div class="panel panel-default">
-   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; ">AIM</div>
+   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif;color: white;background-color: rgba(27, 26, 138, 0.85); ">AIM</div>
   <div class="panel-body"><?php echo $lesson_aim ;?> </div>
 </div>
 
 <div class="panel panel-default">
-   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; ">COMPONENTS</div>
+   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif;color: white;background-color: rgba(27, 26, 138, 0.85); ">COMPONENTS</div>
   <div class="panel-body"><?php echo $lesson_compo ;?> </div>
 </div>
 
 
 <div class="panel panel-default">
-   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; ">INSTRUCTIONS</div>
+   <div class="panel-heading" style="text-align: center; font-size: 25px;  font-family: 'Mada', sans-serif; color: white;background-color: rgba(27, 26, 138, 0.85);">INSTRUCTIONS</div>
   <div class="panel-body"><?php echo $lesson_inst ;?></div>
 </div>
 
@@ -124,9 +146,9 @@ $run_pro = mysqli_query($con, $get_pro);
 
 <div class="panel-group">
     <div class="panel panel-default" >
-      <div class="panel-heading" style="background-color: transparent; text-align: center;">
+      <div class="panel-heading" style="    background-color: #152B39;">
         <h4 class="panel-title" style="background-color: transparent; text-align: center;">
-                 <button type="button" class="btn btn-success btn-lg" data-toggle="collapse" href="#collapse1">Start Quiz</button>
+                 <button type="button" class="quiz-btn" data-toggle="collapse" href="#collapse1">START QUIZ</button>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">

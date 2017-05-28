@@ -4,6 +4,11 @@
 	<title></title>
  
 </head>
+<style>
+.content{
+  background-color: #152B39;
+}
+</style>
 <body>
   
     <!-- Content Header (Page header)
